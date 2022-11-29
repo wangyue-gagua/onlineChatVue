@@ -1,6 +1,11 @@
+<script setup lang="ts">
+import ChatMainScreen from '@/components/ChatMainScreen.vue';
+</script>
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <ChatMainScreen>
+
+    </ChatMainScreen>
   </div>
 </template>
 
