@@ -5,6 +5,7 @@ import { ref } from 'vue';
 
 const email = ref('');
 const password = ref('');
+const snackbarTimeOut = 1000
 const snackbar = ref(false);
 
 const chatAuth = auth
@@ -28,8 +29,8 @@ const emailCreateCount = () => {
 </script>
 
 <template>
-    <v-form>
-        <v-container>
+    <v-card class="loginCard" max-width="400">
+        <v-form>
             <v-text-field v-model="email" label="Email" required>
             </v-text-field>
             <v-text-field v-model="password" label="Password" required>
@@ -37,13 +38,16 @@ const emailCreateCount = () => {
             <v-btn @click="emailCreateCount">
                 Register
             </v-btn>
-        </v-container>
-    </v-form>
-    <v-snackbar v-model="snackbar" :timeout=500>
+        </v-form>
+    </v-card>
+    <v-snackbar v-model="snackbar" :timeout="snackbarTimeOut">
         Sign in おめでとう
     </v-snackbar>
 </template>
 
 <style lang="scss" scoped>
-
+.loginCard {
+    margin: auto;
+    padding: 1rem;
+}
 </style>

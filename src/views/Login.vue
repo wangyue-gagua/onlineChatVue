@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { auth } from '@/firebaseConfig';
-import { useLoginStateStore } from '@/stores/counter';
+import { useLoginStateStore } from '@/stores/loginState';
 import { signInWithEmailAndPassword } from '@firebase/auth';
 import { ref } from 'vue';
 
