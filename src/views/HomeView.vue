@@ -1,9 +1,10 @@
-<script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+<script setup lang="ts">import { useLoginStateStore } from '@/stores/loginState';
+
+const loginStateStore = useLoginStateStore()
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    {{ loginStateStore.isLoggedIn }}
   </main>
 </template>
