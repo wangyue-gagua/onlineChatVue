@@ -44,3 +44,12 @@ npm run build
 ```sh
 npm run test:unit
 ```
+### firebase proxy 
+```
+export https_proxy=http://127.0.0.1:10809
+```
+
+### firebase start emulator
+```
+firebase emulators:start
+```
