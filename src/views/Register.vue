@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import { auth } from '@/firebaseConfig';
+import { auth, db } from '@/firebaseConfig';
 import { createUserWithEmailAndPassword } from '@firebase/auth';
+import { addDoc, collection } from '@firebase/firestore';
 import { ref } from 'vue';
+
 
 const email = ref('');
 const password = ref('');
@@ -9,6 +11,16 @@ const snackbarTimeOut = 1000
 const snackbar = ref(false);
 
 const chatAuth = auth
+const chatDb = db
+// try {
+//     const userDocRef = await addDoc(collection(chatDb, "usersInfo"), {
+//         first: "Ada",
+//         last: "Lovelace",
+//         born: 1815
+//     });
+// } catch (error) {
+
+// }
 const emailCreateCount = () => {
     createUserWithEmailAndPassword(chatAuth, email.value, password.value)
         .then((userCredential) => {
